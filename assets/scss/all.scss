@@ -1,0 +1,160 @@
+body {
+    overflow: hidden;
+}
+
+.start-btn {
+    position: relative;
+    width: 188px;
+    height: 60px;
+    color: #fff;
+    font-weight: bolder;
+
+    &::before {
+        content: attr(data-title);
+        width: 100%;
+        background: linear-gradient(#00FFE0, #008D96);
+        font-size: 20px;
+        border-radius: 40px;
+        padding: 12px 48px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        transition: .2s;
+    }
+
+    &::after {
+        content: attr(data-title);
+        width: 100%;
+        background: #00FFE0;
+        font-size: 20px;
+        border-radius: 40px;
+        padding: 12px 48px;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+    }
+
+    &:hover {
+        &::before {
+            bottom: -5px;
+        }
+    }
+}
+
+.front-guide {
+    width: 908px;
+    height: 430px;
+    background: rgba(10, 13, 20, .6);
+    border: 2px solid #00FFE0;
+    border-radius: 80px;
+    box-shadow: 0px 0px 24px 8px rgba(0, 255, 224, 0.8), 0px 0px 8px 8px rgba(0, 255, 224, 0.95);
+    padding: 144px 100px 120px;
+
+    .front-guide-words {
+        color: #fff;
+        opacity: 1;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 180%;
+    }
+
+    .front-guide-tabs {
+        background-color: #00FFE0;
+        position: absolute;
+        top: 9.3%;
+        left: -15px;
+        padding: 4px 24px;
+        font-weight: bolder;
+        font-size: 24px;
+
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 13px solid transparent;
+            border-right: 13px solid transparent;
+            border-bottom: 13px solid #00B8A7;
+            position: absolute;
+            left: 0px;
+            top: 42px;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.backImg {
+    width: 100%;
+    height: 100vh;
+    background: url('~/assets/images/bg/bg_village.png') center center/cover no-repeat;
+}
+
+.role-section {
+  position: relative;
+  img {
+    width: 300px;
+  }
+  .hole {
+    animation: hole-open .5s linear forwards;
+  }
+  .role {
+    width: 300px;
+    position: absolute;    
+    top: 15px;
+    transform: scaleY(0);
+    transition: 1s;
+    animation: role-show .5s forwards .7s;
+    &.show {
+      transform: scaleY(1);
+    }
+    .light {
+      width: 400px;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%) scale(1.25);
+    }
+    .body {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+.hole {
+  &::before {
+    content: '';
+    width: 50%;
+    background-color: #fff;
+  }
+}
+
+
+.tarnsition-1s {
+    transition: 1s ease;
+}
+
+@keyframes hole-open {
+  0% {
+      transform: scaleX(0);
+  }
+
+  100% {
+      transform: scaleX(1);
+  }
+}
+
+@keyframes role-show {
+  0% {
+    transform: scaleY(0);
+  }
+
+  80% {
+    transform: scaleY(1.2);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
