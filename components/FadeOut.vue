@@ -1,5 +1,5 @@
 <template>
-  <div class="tarnsition-1s" :class="{'opacity-0': fade}">
+  <div class="transition-1s" :class="{'opacity-0': fade}">
     <slot></slot> 
   </div>
 </template>

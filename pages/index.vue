@@ -1,6 +1,6 @@
 <template>
-  <main class="w-100 h-screen bg-current">
-    <Step1 />
+  <main class="w-100 h-screen bg-current overflow-hidden">
+    <Step1 v-if="store.step<=2"/>
     <Step2 v-if="store.step>=2" />
   </main>
 </template>

@@ -9,7 +9,14 @@ module.exports = {
     './app.{js,ts,vue}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#00FFE0'
+      },
+      fontSize: {
+        message: '20px',
+      },
+    },
   },
   plugins: [],
 }

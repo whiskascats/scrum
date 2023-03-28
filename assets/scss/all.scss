@@ -1,7 +1,30 @@
-body {
-    overflow: hidden;
+html, body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
+.ribbon {
+  background-color: #00FFE0;
+  position: absolute;
+  top: 9.3%;
+  left: -20px;
+  padding: 4px 24px;
+  font-weight: bolder;
+  font-size: 24px;
 
+  &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 13px solid transparent;
+      border-right: 13px solid transparent;
+      border-bottom: 13px solid #005656;
+      position: absolute;
+      left: 0px;
+      top: 42px;
+      transform: rotate(45deg);
+  }
+}
 .start-btn {
     position: relative;
     width: 188px;
@@ -58,29 +81,6 @@ body {
         font-size: 24px;
         line-height: 180%;
     }
-
-    .front-guide-tabs {
-        background-color: #00FFE0;
-        position: absolute;
-        top: 9.3%;
-        left: -15px;
-        padding: 4px 24px;
-        font-weight: bolder;
-        font-size: 24px;
-
-        &::before {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 13px solid transparent;
-            border-right: 13px solid transparent;
-            border-bottom: 13px solid #00B8A7;
-            position: absolute;
-            left: 0px;
-            top: 42px;
-            transform: rotate(45deg);
-        }
-    }
 }
 
 .backImg {
@@ -91,22 +91,18 @@ body {
 
 .role-section {
   position: relative;
-  img {
-    width: 300px;
-  }
+  width: 100%;
   .hole {
+    width: 100%;
     animation: hole-open .5s linear forwards;
   }
   .role {
-    width: 300px;
+    width: 100%;
     position: absolute;    
     top: 15px;
     transform: scaleY(0);
     transition: 1s;
     animation: role-show .5s forwards .7s;
-    &.show {
-      transform: scaleY(1);
-    }
     .light {
       width: 400px;
       position: absolute;
@@ -130,9 +126,34 @@ body {
   }
 }
 
+.message {
+  width: 100%;
+  border: 2px solid #00FFE0;
+  border-radius: 40px;
+  position: relative;
+  min-height: 250px;
+  background: linear-gradient(180deg, rgba(0, 255, 224, 0) 0%, rgba(0, 255, 224, 0.03) 59.9%, rgba(0, 255, 224, 0.12) 78.12%, rgba(0, 255, 224, 0.36) 100%), rgba(10, 13, 20, 0.6);
+  p {
+    font-size: 20px;
+    padding: 40px 84px 40px 100px;
+    color: #fff;
+    transition: 1s;
+    animation: role-show .5s forwards .7s;
+    opacity: 0;
+  }
+  .word-show {
+    animation: word-show .5s linear forwards;
+  }
+}
 
-.tarnsition-1s {
+.transition-1s {
     transition: 1s ease;
+}
+
+.words {
+  height: 0;
+  overflow: hidden;
+  animation: words-show 5s linear forwards;
 }
 
 @keyframes hole-open {
@@ -144,7 +165,14 @@ body {
       transform: scaleX(1);
   }
 }
-
+@keyframes words-show {
+  0% {    
+    height: 0;
+  }
+  100% {    
+    height: auto;
+  }
+}
 @keyframes role-show {
   0% {
     transform: scaleY(0);

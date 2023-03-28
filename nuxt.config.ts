@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['@pinia/nuxt','@nuxtjs/tailwindcss'],
-  typescript: {
-    typeCheck: true
-  },
+  // typescript: {
+  //   typeCheck: true
+  // },
   css: [
     '~/assets/scss/all.scss'
   ],
